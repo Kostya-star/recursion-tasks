@@ -1,0 +1,18 @@
+{
+  "name": "recursion-tasks",
+  "version": "1.0.0",
+  "description": "- This is a repository of prompts to be solved using recursion\r - Please refrain from sharing solutions\r - Try to solve prompts first using pseudocode\r - This repo requires that the overall function itself is called recursively and pays no attention to subroutines called recursively.\r - Feel free to make pull requests regarding bugs or suggestions\r - Fork it.  You know you want to.",
+  "main": ".eslintrc.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}

@@ -7,30 +7,56 @@
 // Example:  5! = 5 x 4 x 3 x 2 x 1 = 120
 // factorial(5);  // 120
 const factorial = (n) => {
-  if (n === 0 || n === 1) {
-    return 1;
+  if (n <= 1) {
+    return n;
   } else {
     return n * factorial(n - 1);
   }
 };
 
-console.log(factorial(10));
-
 // 2. Compute the sum of an array of integers.
 // Example:  sum([1, 2, 3, 4, 5, 6]);  // 21
-var sum = function (array) {};
+const sum = (arr, index = 0, sumTotal = 0) => {
+  if(index >= arr.length) return sumTotal
+  
+  sumTotal += arr[index]
+  return sum(arr, index + 1, sumTotal)
+}
 
 // 3. Sum all numbers in an array containing nested arrays.
 // Example: arraySum([1,[2,3],[[4]],5]); // 15
-var arraySum = function (array) {};
+const arraySum = (arr) => {
+  const arrToSumm = [].concat(arr)
+
+  return arrToSumm.some(Array.isArray) ? arraySum([].concat(...arrToSumm)) : arrToSumm.reduce((prev, curr) => prev += curr, 0)
+}
+
+const arr = [1,[2,3],[[4]],5]
 
 // 4. Check if a number is even.
-var isEven = function (n) {};
+const isEven = (num) => {
+  num = Math.abs(num)
+
+  return num === 0 ? true : num === 1 ? false : isEven(num - 2)
+}
+
 
 // 5. Sum all integers below a given integer.
 // sumBelow(10); // 45
 // sumBelow(7); // 21
-var sumBelow = function (n) {};
+const sumBelow = (num, sumAll = 0) => {
+  if(num === 0) return sumAll
+
+  if(num > 0) {
+    sumAll += num - 1
+    return sumBelow(num - 1, sumAll)
+  } else if(num < 0) {
+    sumAll += num + 1
+    return sumBelow(num + 1, sumAll)
+  }
+
+}
+
 
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
@@ -208,3 +234,7 @@ var binarySearch = function (array, target, min, max) {};
 // Sample output: [5,7,23,32,34,62]
 // https://www.khanacademy.org/computing/computer-science/algorithms/merge-sort/a/divide-and-conquer-algorithms
 var mergeSort = function (array) {};
+
+// module.exports = {
+//   factorial
+// }

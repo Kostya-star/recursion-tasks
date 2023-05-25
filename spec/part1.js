@@ -1,4 +1,4 @@
-/* jshint esversion: 6 */
+// const tasks = require('../spec/part1')
 
 (function() {
   'use strict';
